@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NYX</title>
+    <link rel="stylesheet" href="popup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo-section">
+          <h1>NYX</h1>
+          <h4>Focus & Productivity Manager</h4>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="block">
+          <span class="material-icons-round">block</span>
+          Website Blocker
+        </button>
+        <button class="tab-btn" data-tab="screentime">
+          <span class="material-icons-round">timer</span>
+          Screen Time
+        </button>
+      </nav>
+
+      <!-- Block Tab Content -->
+      <div class="tab-content active" id="block-tab">
+        <form id="block-form">
+          <div class="input-group">
+            <label for="website">
+              <span class="material-icons-round">language</span>
+              Website URL
+            </label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              placeholder="e.g., instagram.com"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="duration">
+              <span class="material-icons-round">schedule</span>
+              Block Duration
+            </label>
+            <div class="time-inputs">
+              <div class="time-input-wrapper">
+                <input
+                  type="number"
+                  id="hours"
+                  name="hours"
+                  min="0"
+                  max="23"
+                  placeholder="0"
+                />
+                <span class="time-label">hours</span>
+              </div>
+              <div class="time-input-wrapper">
+                <input
+                  type="number"
+                  id="minutes"
+                  name="minutes"
+                  min="0"
+                  max="59"
+                  placeholder="0"
+                />
+                <span class="time-label">minutes</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span class="material-icons-round">add_circle</span>
+            Block Website
+          </button>
+        </form>
+
+        <div id="blocked-websites">
+          <h2>
+            <span class="material-icons-round">list_alt</span>
+            Blocked Websites
+          </h2>
+          <ul id="blocked-list"></ul>
+        </div>
+      </div>
+
+      <!-- Screen Time Tab Content -->
+      <div class="tab-content" id="screentime-tab">
+        <h2>
+          <span class="material-icons-round">analytics</span>
+          Today's Screen Time
+        </h2>
+        <div id="screentime-list"></div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
